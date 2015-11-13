@@ -28,10 +28,18 @@ Usage
 
 ::
 
-    $ kinto-setup export --auth user:pass --output export.json https://kinto.dev.mozaws.net/v1/buckets/onecrl/*
+    $ kinto-setup export --auth user:pass --output export.json \
+          https://kinto.dev.mozaws.net/v1/buckets/onecrl/*
 
-    $ kinto-setup import --auth user:pass  --input export.json  https://kinto.dev.mozaws.net/v1/
+    $ kinto-setup import --auth user:pass  --input export.json  \
+          https://kinto.dev.mozaws.net/v1/
 
     # OR with httpie
 
-    $ cat export.json | http POST https://kinto.dev.mozaws.net/v1/batch --auth user:pass
+    $ cat export.json | http POST https://kinto.dev.mozaws.net/v1/batch \
+          --auth user:pass
+
+    # OR with curl
+
+    $ curl -u user:pass -H "Content-Type: application/json" --data @export.json \
+          https://kinto.dev.mozaws.net/v1/batch
