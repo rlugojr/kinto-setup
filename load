@@ -1,7 +1,7 @@
 #!/bin/bash
 
-AUTH="mark:p4ssw0rd"
-SERVER_URL=https://kinto.dev.mozaws.net/v1
+SERVER_URL=${1-http://localhost:8888/v1}
+AUTH=${2-mark:p4ssw0rd}
 
 if ! which curl > /dev/null; then echo "Please install cURL first"; exit 1; fi
 
