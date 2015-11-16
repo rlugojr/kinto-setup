@@ -4,10 +4,10 @@
   },
   "requests": [
     {
-      "path": "/buckets/plugins"
+      "path": "/buckets/gfx"
     },
     {
-      "path": "/buckets/plugins/collections/blocklist",
+      "path": "/buckets/gfx/collections/blocklist",
       "body": {
         "data": {
           "schema": {
