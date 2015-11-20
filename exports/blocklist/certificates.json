@@ -4,10 +4,10 @@
   },
   "requests": [
     {
-      "path": "/buckets/onecrl"
+      "path": "/buckets/blocklists"
     },
     {
-      "path": "/buckets/onecrl/collections/blocklist",
+      "path": "/buckets/blocklists/collections/certificates",
       "body": {
         "data": {
           "schema": {

@@ -4,10 +4,10 @@
   },
   "requests": [
     {
-      "path": "/buckets/plugins"
+      "path": "/buckets/blocklists"
     },
     {
-      "path": "/buckets/plugins/collections/blocklist",
+      "path": "/buckets/blocklists/collections/plugins",
       "body": {
         "data": {
           "schema": {

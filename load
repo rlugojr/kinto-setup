@@ -5,14 +5,14 @@ AUTH=${2-mark:p4ssw0rd}
 
 if ! which curl > /dev/null; then echo "Please install cURL first"; exit 1; fi
 
-echo -e "Setup OneCRL blocklist: $SERVER_URL/buckets/onecrl/collections/blocklist/records\n"
+echo -e "Setup OneCRL blocklist: $SERVER_URL/buckets/blocklists/collections/certificates/records\n"
 curl -u "$AUTH" -H "Content-Type: application/json" --data @exports/blocklist/certificates.json "$SERVER_URL/batch" || echo "Error loading the file."
 
-echo -e "\n\n\nSetup AMO blocklist: $SERVER_URL/buckets/addons/collections/blocklist/records\n"
+echo -e "\n\n\nSetup AMO blocklist: $SERVER_URL/buckets/blocklists/collections/addons/records\n"
 curl -u "$AUTH" -H "Content-Type: application/json" --data @exports/blocklist/addons.json "$SERVER_URL/batch" || echo "Error loading the file."
 
-echo -e "\n\n\nSetup Plugins blocklist: $SERVER_URL/buckets/plugins/collections/blocklist/records\n"
+echo -e "\n\n\nSetup Plugins blocklist: $SERVER_URL/buckets/blocklists/collections/plugins/records\n"
 curl -u "$AUTH" -H "Content-Type: application/json" --data @exports/blocklist/plugins.json "$SERVER_URL/batch" || echo "Error loading the file."
 
-echo -e "\n\n\nSetup GFX drivers blocklist: $SERVER_URL/buckets/gfx/collections/blocklist/records\n"
+echo -e "\n\n\nSetup GFX drivers blocklist: $SERVER_URL/buckets/blocklists/collections/gfx/records\n"
 curl -u "$AUTH" -H "Content-Type: application/json" --data @exports/blocklist/gfx.json "$SERVER_URL/batch" || echo "Error loading the file."
